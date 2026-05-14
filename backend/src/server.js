@@ -13,7 +13,7 @@ const setupKitchenSocket = require("./sockets/kitchenSocket");
 
 const app = express();
 const server = http.createServer(app);
-const ALLOWED_ORIGINS = ["http://localhost:5173", "http://localhost:5174"];
+const ALLOWED_ORIGINS = ["https://rms-sigma-six.vercel.app"];
 const io = new Server(server, {
   cors: { origin: ALLOWED_ORIGINS },
 });
@@ -53,7 +53,7 @@ setupKitchenSocket(io);
 const startServer = async () => {
   await testConnection();
   server.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
+    console.log(`🚀 Server running`);
     console.log(`🔌 WebSocket ready`);
   });
 };
